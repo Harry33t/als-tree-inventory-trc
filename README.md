@@ -10,7 +10,9 @@ manuscript tooling.
 
 ## Demo
 
-[![Rotating comparison on NIBIO2 plot 60](demo/preview.png)](demo/comparison_nibio2_plot60.mp4)
+**Project page with the video playing in the browser: <https://harry33t.github.io/als-tree-inventory-trc/>**
+
+[![Rotating comparison on NIBIO2 plot 60](demo/preview.png)](https://harry33t.github.io/als-tree-inventory-trc/)
 
 `demo/comparison_nibio2_plot60.mp4` (10 s, 720p) rotates one crown-contact subregion of
 14 x 14 m through the seven panels of the qualitative figure of the article. The manual
