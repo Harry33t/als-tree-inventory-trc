@@ -4,8 +4,24 @@ Code release for the manuscript *Reliable Individual-Tree Inventory From Airborn
 Scanning With Competition-Aware Segmentation and Trait-Specific Selective Delivery*
 (submitted to IEEE Transactions on Geoscience and Remote Sensing).
 
-The repository contains the method and evaluation code only. It contains no point-cloud
-data, no model weights, no figure-generation scripts, and no manuscript tooling.
+The repository contains the method and evaluation code, together with a short demonstration
+video. It contains no point-cloud data, no model weights, no figure-generation scripts, and no
+manuscript tooling.
+
+## Demo
+
+[![Rotating comparison on NIBIO2 plot 60](demo/preview.png)](demo/comparison_nibio2_plot60.mp4)
+
+`demo/comparison_nibio2_plot60.mp4` (10 s, 720p) rotates one crown-contact subregion of
+14 x 14 m through the seven panels of the qualitative figure of the article. The manual
+reference stands on the left. The top row holds the published methods and the fine-tuned
+baseline, ForAINet, SegmentAnyTree and Baseline. The bottom row holds the three configurations
+of this work, +ACPE, +EPCO and +ACPE+EPCO. Points are coloured by the reference tree that a
+predicted instance is matched to; gray is a spurious instance, orange a reference tree without
+an accepted match, red the points of a neighbouring reference tree absorbed into a matched
+instance. The counts give the matched reference trees whose centroid lies inside the subregion
+and the spurious instances centred inside it. Every frame is rendered from the sealed
+predictions and the sealed one-to-one matching at IoU > 0.5; nothing is recomputed.
 
 ## Contents
 
