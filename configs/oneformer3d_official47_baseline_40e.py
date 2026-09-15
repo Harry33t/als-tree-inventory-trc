@@ -1,0 +1,9 @@
+_base_ = './oneformer3d_control_formal_teacher.py'
+
+teacher_benchmark = dict(
+    protocol='official47_matched_40epoch_finetune',
+    arm='baseline'  # 'control' in the original run logs,
+    seed=20260819,
+    initialization='original_published_baseline_checkpoint',
+    acpe_enabled=False,
+    epco_enabled=False)
