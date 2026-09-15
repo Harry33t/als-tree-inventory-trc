@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reliable Individual-Tree Inventory From ALS</title>
+<meta name="description" content="Competition-aware segmentation and trait-specific selective delivery for ALS individual-tree inventory.">
+<style>
+  :root{
+    --ink:#1c1f26; --muted:#5f6670; --line:#e3e6ea; --bg:#ffffff; --soft:#f6f7f9;
+    --accent:#1f6fb5; --accent-soft:#e8f0f8;
+    --serif:"Times New Roman",Times,"Liberation Serif",Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+       font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  header{border-bottom:1px solid var(--line);padding:52px 0 34px}
+  .kicker{font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+  h1{font-family:var(--serif);font-size:34px;line-height:1.22;margin:0 0 16px;font-weight:700;letter-spacing:-.01em}
+  .lede{font-size:17px;color:var(--muted);margin:0;max-width:74ch}
+  .links{margin:26px 0 0;display:flex;flex-wrap:wrap;gap:10px}
+  .btn{display:inline-block;padding:9px 16px;border:1px solid var(--line);border-radius:6px;
+       text-decoration:none;color:var(--ink);font-size:14.5px;background:var(--bg);transition:.15s}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  .btn.primary:hover{background:#1a5f9c;color:#fff}
+  section{padding:46px 0;border-bottom:1px solid var(--line)}
+  h2{font-family:var(--serif);font-size:23px;margin:0 0 8px;font-weight:700}
+  .sub{color:var(--muted);font-size:15px;margin:0 0 22px;max-width:78ch}
+  figure{margin:0}
+  video{width:100%;height:auto;display:block;background:#fff;border:1px solid var(--line);border-radius:8px}
+  figcaption{font-size:14.5px;color:var(--muted);margin-top:14px;max-width:88ch}
+  .key{display:flex;flex-wrap:wrap;gap:8px 22px;margin:16px 0 0;padding:0;list-style:none;font-size:14.5px;color:var(--muted)}
+  .key li{display:flex;align-items:center;gap:8px}
+  .dot{width:11px;height:11px;border-radius:50%;display:inline-block;flex:0 0 auto}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px;margin:0}
+  .card{border:1px solid var(--line);border-radius:8px;padding:18px 18px 16px;background:var(--soft)}
+  .num{font-family:var(--serif);font-size:29px;font-weight:700;color:var(--accent);line-height:1.1}
+  .lab{font-size:14px;color:var(--muted);margin-top:7px}
+  table{width:100%;border-collapse:collapse;font-size:15px;margin:0}
+  .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  th,td{text-align:right;padding:9px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+  th:first-child,td:first-child{text-align:left}
+  thead th{font-weight:600;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+  tbody tr.ours{background:var(--accent-soft)}
+  tbody tr.ours td{font-weight:600}
+  .note{font-size:13.5px;color:var(--muted);margin:12px 0 0}
+  ul.plain{margin:0;padding-left:20px;color:var(--muted);font-size:15.5px}
+  ul.plain li{margin:7px 0}
+  ul.plain b{color:var(--ink);font-weight:600}
+  footer{padding:34px 0 60px;font-size:14px;color:var(--muted)}
+  footer a{color:var(--accent)}
+  @media (max-width:640px){
+    header{padding:36px 0 26px}
+    h1{font-size:26px}
+    section{padding:34px 0}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="kicker">Airborne laser scanning &middot; individual-tree inventory</p>
+    <h1>Reliable Individual-Tree Inventory From Airborne Laser Scanning With Competition-Aware Segmentation and Trait-Specific Selective Delivery</h1>
+    <p class="lede">Two training-only objectives are added to a query-based 3-D segmenter: ACPE separates
+      cross-fitted tree-level prototypes in shallow voxel features, and EPCO supervises point ownership where
+      crowns touch. Predicted and reference trees are then measured with one frozen definition of height and
+      crown width, every reference tree stays in the denominator, and a reliability-control stage ranks what a
+      human should check. Inference is unchanged: both objectives are removed after training.</p>
+    <p class="links">
+      <a class="btn primary" href="https://github.com/Harry33t/als-tree-inventory-trc">Code repository</a>
+      <a class="btn" href="comparison_nibio2_plot60.mp4">Download the video (MP4, 7&nbsp;MB)</a>
+    </p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Qualitative comparison</h2>
+    <p class="sub">One crown-contact subregion of 14&nbsp;&times;&nbsp;14&nbsp;m in NIBIO2 plot&nbsp;60, orbiting
+      through a full turn. The camera moves; the data do not.</p>
+    <figure>
+      <video src="comparison_nibio2_plot60.mp4" poster="preview.png"
+             autoplay loop muted playsinline preload="auto"
+             controls aria-label="Rotating comparison of seven segmentation panels"></video>
+      <figcaption>
+        The manual reference stands on the left. The top row holds the published methods and the fine-tuned
+        baseline, ForAINet, SegmentAnyTree and Baseline. The bottom row holds the three configurations of this
+        work. Counts give the matched reference trees whose centroid lies inside the subregion and the spurious
+        instances centred inside it, in the notation of the article. Every frame is rendered from the sealed
+        predictions and the sealed one-to-one matching at IoU&nbsp;&gt;&nbsp;0.5; nothing is recomputed.
+      </figcaption>
+      <ul class="key">
+        <li><span class="dot" style="background:#2ca02c"></span>matched instance, coloured by its reference tree</li>
+        <li><span class="dot" style="background:#8c8c8c"></span>spurious instance</li>
+        <li><span class="dot" style="background:#ff800d"></span>omitted reference tree</li>
+        <li><span class="dot" style="background:#cc1a1a"></span>foreign points absorbed</li>
+      </ul>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>What the panels show</h2>
+    <p class="sub">Counts for this subregion, out of 28 reference trees whose centroid lies inside it.</p>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr><th>Panel</th><th>Matched</th><th>Spurious</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>ForAINet</td><td>11 / 28</td><td>2</td></tr>
+          <tr><td>SegmentAnyTree</td><td>12 / 28</td><td>4</td></tr>
+          <tr><td>Baseline</td><td>18 / 28</td><td>6</td></tr>
+          <tr class="ours"><td>+ ACPE</td><td>20 / 28</td><td>4</td></tr>
+          <tr class="ours"><td>+ EPCO</td><td>21 / 28</td><td>2</td></tr>
+          <tr class="ours"><td>+ ACPE + EPCO</td><td>19 / 28</td><td>3</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Baseline is the same segmenter fine-tuned by the same procedure without the two auxiliary
+      objectives. This is one subregion chosen for crown contact, not an average over the test scenes.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Results over the test scenes</h2>
+    <p class="sub">28 scenes of the FOR-instanceV2 test split, 1207 reference trees, eight methods evaluated
+      under one matcher and one inventory.</p>
+    <div class="grid">
+      <div class="card"><div class="num">0.850</div><div class="lab">F1, the highest of the eight methods, against 0.802 for the strongest external method</div></div>
+      <div class="card"><div class="num">0.759</div><div class="lab">Panoptic quality, against 0.693 for the strongest external method</div></div>
+      <div class="card"><div class="num">&minus;16%</div><div class="lab">False positives against the same model fine-tuned without the objectives, 180 to 151</div></div>
+      <div class="card"><div class="num">0.34 m</div><div class="lab">Matched-tree height RMSE with ACPE, down from 0.47 m</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Selective delivery</h2>
+    <ul class="plain">
+      <li>Every reference tree stays in the denominator, so omitted and undeliverable trees are counted rather
+        than dropped.</li>
+      <li>Three risk heads score <b>instance validity</b>, <b>height failure</b> and <b>crown-width failure</b>
+        from prediction-only descriptors, validated by leave-one-physical-source-out.</li>
+      <li>At a nominal 20% review budget the queue intercepts <b>72%</b> of invalid instances, <b>70%</b> of
+        height failures and <b>42%</b> of crown-width failures, 3.5, 3.3 and 2.0 times the yield of random
+        review.</li>
+      <li>On an external field-measured source that took no part in development, all four configurations
+        deliver both traits for the 43 reference trees within tolerance, and the frozen validity ranking
+        transfers with an AUROC of <b>0.86</b>.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Manuscript submitted to <i>IEEE Transactions on Geoscience and Remote Sensing</i>.
+    Method and evaluation code:
+    <a href="https://github.com/Harry33t/als-tree-inventory-trc">github.com/Harry33t/als-tree-inventory-trc</a>.
+    Evaluation uses the openly available FOR-instanceV2 benchmark; the external field-measured source is
+    available from the corresponding author on request.
+  </div>
+</footer>
+
+</body>
+</html>
