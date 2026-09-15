@@ -43,14 +43,6 @@ Both objectives are auxiliary losses, `L_total = L_FF3D + alpha * L_ACPE + beta 
 They are active during training only and are removed at inference, so the deployed network
 is the unmodified segmenter graph.
 
-## Not included
-
-- **All data.** The FOR-instanceV2 benchmark, the published ForestFormer3D checkpoint and
-  the released models of the external methods are obtained from their own distributions and
-  remain under their own licences. The external field-measured source L1A is not part of a
-  public benchmark, and requests for access should be addressed to the corresponding author.
-- Figure-generation scripts, manuscript sources, and internal packaging or audit tooling.
-
 ## Relation to the upstream segmenter
 
 Both objectives are written for ForestFormer3D, which builds on OneFormer3D and
