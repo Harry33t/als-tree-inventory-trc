@@ -1,7 +1,7 @@
-# Reliable Individual-Tree Inventory From ALS
+# Reliable Tree Phenotyping From ALS Point Clouds
 
-Code release for the manuscript *Reliable Individual-Tree Inventory From Airborne Laser
-Scanning With Competition-Aware Segmentation and Trait-Specific Selective Delivery*
+Code release for the manuscript *Competition-Aware Segmentation and Trait-Specific
+Selective Delivery for Reliable Tree Phenotyping From ALS Point Clouds*
 (submitted to IEEE Transactions on Geoscience and Remote Sensing).
 
 The repository contains the method and evaluation code, together with a short demonstration
@@ -12,10 +12,11 @@ manuscript tooling.
 
 **Project page with the video playing in the browser: <https://harry33t.github.io/als-tree-inventory-trc/>**
 
-[![Rotating comparison on NIBIO2 plot 60](demo/preview.png)](https://harry33t.github.io/als-tree-inventory-trc/)
+[![Rotating comparison on three test scenes](demo/preview.png)](https://harry33t.github.io/als-tree-inventory-trc/)
 
-`demo/comparison_nibio2_plot60.mp4` (10 s, 720p) rotates one crown-contact subregion of
-14 x 14 m through the seven panels of the qualitative figure of the article. The manual
+`demo/comparison_three_scenes.mp4` (27 s, 720p) rotates the three crown-contact subregions of
+14 x 14 m shown in the qualitative figure of the article, TUWIEN, NIBIO2 plot 32 and NIBIO2
+plot 60, one full turn of 9 s each, through the seven panels of that figure. The manual
 reference stands on the left. The top row holds the published methods and the fine-tuned
 baseline, ForAINet, SegmentAnyTree and Baseline. The bottom row holds the three configurations
 of this work, +ACPE, +EPCO and +ACPE+EPCO. Points are coloured by the reference tree that a
