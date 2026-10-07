@@ -14,9 +14,10 @@ manuscript tooling.
 
 [![Rotating comparison on three test scenes](demo/preview.png)](https://harry33t.github.io/als-tree-inventory-trc/)
 
-`demo/comparison_three_scenes.mp4` (27 s, 720p) rotates the three crown-contact subregions of
-14 x 14 m shown in the qualitative figure of the article, TUWIEN, NIBIO2 plot 32 and NIBIO2
-plot 60, one full turn of 9 s each, through the seven panels of that figure. The manual
+`demo/comparison_three_scenes.mp4` (44 s, 1080p) shows the three crown-contact subregions of
+14 x 14 m in the qualitative figure of the article, TUWIEN, NIBIO2 plot 32 and NIBIO2 plot 60,
+with the colours and counts of that figure. Each scene opens on the view of the figure, zooms
+into its dashed magnified box, and then turns once through the seven panels. The manual
 reference stands on the left. The top row holds the published methods and the fine-tuned
 baseline, ForAINet, SegmentAnyTree and Baseline. The bottom row holds the three configurations
 of this work, +ACPE, +EPCO and +ACPE+EPCO. Points are coloured by the reference tree that a
