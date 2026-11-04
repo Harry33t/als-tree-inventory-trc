@@ -249,7 +249,7 @@ def load_trait_authority(root: Path, output: Path):
     record = {"revision": "L1A_frozen_traits_erratum_r2", "adapter_tests": "passed_0_29_30_90_points", "previous_L1A_outcomes_already_accessed": True,
               "purpose": "Correct implementation mismatch; no fitting, threshold selection or segmentation rerun",
               "ground_adapter": "L1A classification=2 checked equal to treeID=0; adapted to formal ground mask",
-              "reference": "External field measurements, NOT same-definition reference-point-cloud traits",
+              "reference": "External field measurements, NOT traits measured on reference point clouds",
               "authorities": {name: {"path": str(path), "sha256": sha256(path)} for name, path in paths.items()},
               "script_sha256": sha256(Path(__file__))}
     (output / "trait_algorithm_erratum.json").write_text(json.dumps(record, indent=2), encoding="utf-8")
