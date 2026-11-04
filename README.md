@@ -14,8 +14,10 @@ manuscript tooling.
 
 [![Rotating comparison on three test scenes](demo/preview.png)](https://harry33t.github.io/als-tree-inventory-trc/)
 
-`demo/comparison_three_scenes.mp4` (68 s, 1080p) has two parts. The first 44 s show the three
-crown-contact subregions of 14 x 14 m in the qualitative figure of the article, TUWIEN, NIBIO2 plot 32 and NIBIO2 plot 60,
+The project page holds two videos.
+
+`demo/comparison_three_scenes.mp4` (44 s, 1080p) shows the three crown-contact subregions of
+14 x 14 m in the qualitative figure of the article, TUWIEN, NIBIO2 plot 32 and NIBIO2 plot 60,
 with the colours and counts of that figure. Each scene opens on the view of the figure, zooms
 into its dashed magnified box, and then turns once through the seven panels. The manual
 reference stands on the left. The top row holds the published methods and the fine-tuned
@@ -27,15 +29,15 @@ instance. The counts give the matched reference trees whose centroid lies inside
 and the spurious instances centred inside it. Every frame is rendered from the sealed
 predictions and the sealed one-to-one matching at IoU > 0.5; nothing is recomputed.
 
-The last 24 s show trait-specific reliability control on the whole TUWIEN scene under EPCO. The
-risk models were fitted on the other seven sources and use no reference trees of this scene. At
-a nominal 20% budget the validity model sends 7 of the 34 predicted instances to review, and the
-H and CW models then each send 6 of the 27 retained instances to their own queue. One tree keeps
-its height and sends its crown width to review; this tree is an illustration and not a typical
-outcome. The closing numbers are those of the review-yield table of the article. Instances under
-review are drawn on top of the others so that small ones stay visible. The sealed tables store
-trait scores for matched instances only, so the scores of the unmatched instances come from
-rerunning the same outer folds, which reproduces the cascade counts of the article.
+`demo/review_cascade.mp4` (20 s, 1080p) shows trait-specific reliability control on the whole
+TUWIEN scene under EPCO. The risk models were fitted on the other seven sources and use no
+reference trees of this scene. At a nominal 20% budget the validity model sends 7 of the 34
+predicted instances to review, and the H and CW models then each send 6 of the 27 retained
+instances to their own queue. One tree keeps its height and sends its crown width to review;
+this tree is an illustration and not a typical outcome. Instances under review are drawn on top
+of the others so that small ones stay visible. The sealed tables store trait scores for matched
+instances only, so the scores of the unmatched instances come from rerunning the same outer
+folds, which reproduces the cascade counts of the article.
 
 ## Contents
 
