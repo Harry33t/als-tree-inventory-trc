@@ -12,6 +12,8 @@
        line-height:1.28;-webkit-font-smoothing:antialiased}
   main{max-width:1180px;margin:0 auto;padding:48px 20px 64px}
   h1{font-size:30px;font-weight:700;letter-spacing:-.01em;margin:0 0 28px;max-width:34ch}
+  h2{font-size:20px;font-weight:700;margin:0 0 12px}
+  section+section{margin-top:40px}
   video{width:100%;height:auto;display:block;background:#fff;
         border:1px solid #e3e6ea;border-radius:8px}
   nav{margin:22px 0 0;display:flex;flex-wrap:wrap;gap:26px;font-size:17px}
@@ -27,11 +29,20 @@
 <body>
 <main>
   <h1>Competition-Aware Segmentation and Trait-Specific Selective Delivery for Reliable Tree Phenotyping From ALS Point Clouds</h1>
-  <video src="comparison_three_scenes.mp4" poster="preview.png"
-         autoplay loop muted playsinline preload="auto" controls></video>
+  <section>
+    <h2>Segmentation comparison on three test scenes</h2>
+    <video src="comparison_three_scenes.mp4" poster="preview.png"
+           autoplay loop muted playsinline preload="auto" controls></video>
+  </section>
+  <section>
+    <h2>Trait-specific selective delivery</h2>
+    <video src="review_cascade.mp4" poster="review_cascade_preview.png"
+           autoplay loop muted playsinline preload="auto" controls></video>
+  </section>
   <nav>
     <a href="https://github.com/Harry33t/als-tree-inventory-trc">Code repository</a>
-    <a href="comparison_three_scenes.mp4" download>Download the video</a>
+    <a href="comparison_three_scenes.mp4" download>Download the segmentation video</a>
+    <a href="review_cascade.mp4" download>Download the delivery video</a>
   </nav>
 </main>
 </body>
