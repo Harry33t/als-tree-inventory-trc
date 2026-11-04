@@ -29,13 +29,16 @@ instance. The counts give the matched reference trees whose centroid lies inside
 and the spurious instances centred inside it. Every frame is rendered from the sealed
 predictions and the sealed one-to-one matching at IoU > 0.5; nothing is recomputed.
 
-`demo/review_cascade.mp4` (20 s, 1080p) shows trait-specific reliability control on the whole
+`demo/review_cascade.mp4` (31 s, 1080p) shows trait-specific reliability control on the whole
 TUWIEN scene under EPCO. The risk models were fitted on the other seven sources and use no
 reference trees of this scene. At a nominal 20% budget the validity model sends 7 of the 34
 predicted instances to review, and the H and CW models then each send 6 of the 27 retained
 instances to their own queue. One tree keeps its height and sends its crown width to review;
-this tree is an illustration and not a typical outcome. Instances under review are drawn on top
-of the others so that small ones stay visible. The sealed tables store trait scores for matched
+this tree is an illustration and not a typical outcome. Each step shows the decision first and
+then an offline check with the reference trees. The error types and tolerance counts in these
+checks come from the reference data; the risk models do not see them and do not output an error
+type, and most reviewed values are within tolerance. Instances under review are drawn on top of
+the others so that small ones stay visible. The sealed tables store trait scores for matched
 instances only, so the scores of the unmatched instances come from rerunning the same outer
 folds, which reproduces the cascade counts of the article.
 
